@@ -1,0 +1,201 @@
+:root {
+    --bg: #141e30;
+    --surface: #1f2b44;
+    --text: #f5f5f7;
+    --accent: #4da3ff;
+    --warn: #ff5a5f;
+    --font-title: "Black Han Sans", sans-serif;
+    --font-body: "Noto Sans KR", sans-serif;
+    --gap: 20px;
+}
+
+body {
+    background: var(--bg);
+    min-height: 100vh;
+    box-sizing: border-box;
+    margin: 16px;
+    padding: 16px;
+    font-family: var(--font-body);
+    color: var(--text);
+}
+
+/* 본문 폭과 글자색 */
+main,
+.top,
+.hero,
+footer {
+    max-width: 1100px;
+    margin: 0 auto 24px;
+}
+
+/* /본문 폭과 글자색 */
+
+h1,
+footer {
+    color: var(--text);
+}
+
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,
+            0, 0, 0.3);
+    background: var(--surface);
+    position: relative;
+    transition: transform 0.3s, box -shadow 0.3s;
+    color: var(--text);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(255, 193, 7, 0.6);
+}
+
+.poster {
+    width: 100%;
+    display: block;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--accent);
+    color: var(--text);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-weight: bold;
+}
+
+.info {
+    padding: 12px;
+}
+
+/* 헤더 플렉스 */
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: var(--gap);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+/* /헤더 플렉스 */
+
+/* 보드 그리드 */
+.board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--gap);
+}
+
+/* /보드 그리드 */
+
+
+/* 히어로 */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://image.tmdb.org/t/p/w1280/9BBTo63ANSmhC4e6r62OJFuK2GL.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 40vh;
+    padding: 24px;
+    box-sizing: border-box;
+    color: var(--text);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* /히어로 */
+
+.rank {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--warn);
+    color: var(--text);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-weight: bold;
+}
+
+.change.up::before {
+    content: "▲";
+    color: var(--warn);
+}
+
+
+.change.down::before {
+    content: "▼";
+    color: var(--accent);
+}
+
+
+.change.new::before {
+    content: "NEW";
+    color: var(--warn);
+}
+
+.detail {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap);
+}
+
+.detail-page {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+        url("https://image.tmdb.org/t/p/w1280//4tjxYg2AbOzzG9G1YuiT2NzYhlH.jpg");
+
+    background-size: cover;
+    min-height: 100vh;
+}
+
+dt {
+    color: var(--accent);
+}
+
+/* 미디어 쿼리 1 */
+@media (min-width: 600px) {
+    nav ul {
+        flex-direction: row;
+        gap: var(--gap);
+    }
+
+    .detail {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .detail img {
+        width: 100%;
+    }
+}
+
+/* /미디어 쿼리 1 */
+
+
+/* /미디어 쿼리 2 */
+@media (min-width: 1024px) {
+    .hero {
+        min-height: 60vh;
+    }
+
+    .hero h2 {
+        font-size: 3rem;
+    }
+}
+
+/* /미디어 쿼리 2 */
