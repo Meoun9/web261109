@@ -37,8 +37,6 @@ stdScore.name = "홍길동";
 console.log(stdScore);
 */
 
-
-
 // script.js : 내 영화 평점 통계(콘솔판)
 // 작성자 : 김시윤(2651013)
 
@@ -46,6 +44,23 @@ console.log(stdScore);
 const titles = ["스파이더맨: 브랜드 뉴 데이", "미션 임파서블: 고스트 프로토콜", "어벤져스: 엔드게임", "어벤져스: 인피니티 워", "어벤져스: 에이지 오브 울트론"];
 const ratings = [8.5, 7.1, 8.2, 8.2, 7.2];
 const years = [2026, 2011, 2019, 2018, 2015];
+
+// 즉시 실행 함수 만들기
+(function(){
+    console.log("나는 함수다. 실행되었다.");
+})();
+//화살표 함수로 함수 정의 하기
+const gugudan = dan => {
+    for(let i =1 ; i<=9; i++){
+        console.log(`${dan} * ${i} = ${dan*i}`);
+    }
+}
+gugudan(7);
+
+const add = (num1, num2) => num1 + num2;
+console.log(add(1234,5678));
+
+
 let sum = 0;
 for (let i = 0; i < ratings.length; i++) {
     sum = sum + ratings[i];
